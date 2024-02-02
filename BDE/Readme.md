@@ -61,13 +61,7 @@ Año 2012
 
 # Docentes:
 - Manuel Retamozo
-- Horacio Castellaro
+- Veronica Heredia
 
 # Tutores:
-- Mercedes Mugni
-- Samanta Aleso
-- Luis Piccinali
-- Juan Oldani
-- Sebastián Boo
-- Federico Sánchez
-- Paulo Frontera
+- Neptuso (ayudante)
