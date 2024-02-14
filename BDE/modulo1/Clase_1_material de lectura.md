@@ -243,13 +243,13 @@ Vamos a crear una nueva base de datos que se llamará “curso”. Hacemos clic 
 
       Las tablas que aquí se presentan (clic en “+” de Tablas) son las que utiliza PostGIS para manejar los datos espaciales. En la clase siguiente veremos de qué se tratan los datos contenidos en estas tablas.
 
-      Ahora agregaremos una nueva tabla a la base de datos. Lo haremos a través de la restauración de un archivo de resguardo. Este tipo de archivos se crea desde PGAdmin y sirve para guardar una copia segura de los datos, o para transferir los datos a otro usuario. Utilizaremos el archivo llamado poblacion.backup que acompaña el material de práctica de esta clase.
+      Ahora agregaremos una nueva tabla a la base de datos. Lo haremos a través de la restauración de un archivo de resguardo. Este tipo de archivos se crea desde PGAdmin y sirve para guardar una copia segura de los datos, o para transferir los datos a otro usuario. Utilizaremos el archivo llamado censo.backup que acompaña el material de práctica de esta clase.
 
       Hacemos clic con el botón derecho sobre el ícono de la base “curso”, y de la lista desplegable seleccionamos la opción Restaurar…
 
 
 
-      Cuando se abre la ventana, en Nombre del Archivo exploramos hasta encontrar el archivo de resguardo poblacion.backup. Luego presionamos OK.
+      Cuando se abre la ventana, en Nombre del Archivo exploramos hasta encontrar el archivo de resguardo censo.backup. Luego presionamos OK.
 
 
 
@@ -268,7 +268,7 @@ Vamos a crear una nueva base de datos que se llamará “curso”. Hacemos clic 
       El panel superior, como ya vimos, muestra las propiedades, y el panel inferior nos presenta algo nuevo: la sintaxis SQL que crea el objeto señalado en el panel de objetos.
 
       Si analizamos un poco esta consulta, vemos que hay una orden de crear una tabla, donde se enumeran los nombres de los campos o columnas con el tipo de dato que cada una de ellas almacenará.
-CREATE TABLE poblacion
+CREATE TABLE censo
 (
   cod_prov character(2) NOT NULL,
   cod_depto character(3) NOT NULL,
@@ -282,12 +282,12 @@ CREATE TABLE poblacion
   hogares22 double precision,
   computadoras22 double precision,
   
-  CONSTRAINT pkey_poblacion_cod_depto PRIMARY KEY (cod_depto)
+  CONSTRAINT pkey_censo_link PRIMARY KEY (link)
 )
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE censo2010 OWNER TO postgres;
+ALTER TABLE censo OWNER TO postgres;
 
       Por ahora no nos detendremos demasiado en analizar esta consulta, pero sí es importante saber que cada objeto de la base de datos se crea y modifica utilizando el lenguaje de consulta SQL. A pesar de ello, veremos que también se pueden realizar las mismas acciones oprimiendo botones, arrastrando objetos, haciendo clics, etc..
       
@@ -308,7 +308,7 @@ ACTIVIDAD 2. Desplegar la tabla poblacion. Hacer una impresión de pantalla y ag
 
       También al hacer un clic sobre un campo, podemos ver sus propiedades y conocer la consulta SQL que lo origina.
 
-ALTER TABLE poblacion ADD COLUMN pob2022 bigint;
+ALTER TABLE censo ADD COLUMN pob2022 bigint;
 
 4 Migración de datos alfanuméricos desde LibreOffice
 
