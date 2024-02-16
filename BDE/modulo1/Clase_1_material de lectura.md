@@ -275,12 +275,12 @@ CREATE TABLE censo
   link character(5) NOT NULL,
   nom_prov character varying(255),
   nom_depto character varying(255),
-  superficie double precision,
-  pob2001 double precision,
-  pob2010 double precision,
-  pob2022 double precision,
-  hogares22 double precision,
-  computadoras22 double precision,
+  superficie2022 double precision,
+  pob2001 bigint,
+  pob2010 bigint,
+  pob2022 bigint,
+  hogares2022 bigint,
+  computadoras2022 bigint,
   
   CONSTRAINT pkey_censo_link PRIMARY KEY (link)
 )
@@ -300,7 +300,7 @@ ACTIVIDAD 2. Desplegar la tabla poblacion. Hacer una impresión de pantalla y ag
 
       Vemos que se trata de una tabla con once campos (columnas) y 529 registros (filas). Y también podemos comprobar lo que vimos anteriormente en el script SQL con respecto al tipo de datos de cada campo.
 
-      Vemos que los campos nom_prov, nom_depto , cod_prov y cod_depto son de tipo “character varing”, lo que significa que pueden almacenar todo tipo de caracteres alfanuméricos. El campo “superficie” es de tipo Double Presicion, lo que le permite almacenar números decimales. Y los demás campos son de tipo bigint, lo cual permite almacenar números enteros grandes.
+      Vemos que los campos nom_prov, nom_depto , cod_prov y cod_depto son de tipo “character varing”, lo que significa que pueden almacenar todo tipo de caracteres alfanuméricos. El campo “superficie2022” es de tipo Double Presicion, lo que le permite almacenar números decimales. Y los demás campos son de tipo bigint, lo cual permite almacenar números enteros grandes.
 
       De la misma manera que la tablas son objetos para Postgres, los campos o columnas también lo son. Es por eso que podemos encontrarlos desplegando aún más el árbol de objetos.
 
